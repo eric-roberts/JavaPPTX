@@ -1,0 +1,231 @@
+<html>
+<head>
+<title>The stanford.pptx Package</title>
+</head>
+<body>
+This package defines a relatively small set of classes that make
+it possible to write PowerPoint slides from Java programs.
+The goal of the package is not to write entire slide shows, but
+rather to generate complex shape patterns or animation sequences
+that cannot easily be done by hand.
+
+<p>The use of the package is best illustrated by example.
+The code in <a href="#Figure1">Figure 1</a>, for example, creates a
+red square at the center of a PowerPoint slide and then
+superimposes a green circle when the user clicks the mouse.
+The code in <a href="#Figure2">Figure 2</a>, creates
+a PowerPoint slide with an 8x8 checkerboard in the center of the
+slide.
+
+<p><a name="Figure1"></a>
+<font face="arial,helvetica,sans serif" size=-1><b>
+Figure 1. Simple PowerPoint example</b></font>
+<table border=1 width=100% cellspacing=0 cellpadding=3>
+<tr><td><pre><code><b><font color=blue>/*
+ * File: PPSimpleShapes.java
+ * -------------------------
+ * This program offers a simple example of the stanford.pptx package.
+ */</font>
+
+import edu.stanford.cs.pptx.PPOval;
+import edu.stanford.cs.pptx.PPRect;
+import edu.stanford.cs.pptx.PPShow;
+import edu.stanford.cs.pptx.PPSlide;
+import java.awt.Color;
+
+<font color=blue>/**
+ * This class creates a PowerPoint show whose single slide
+ * begins with a red square and then superimposes a green circle
+ * when the user clicks the mouse.
+ */</font>
+
+public class PPSimpleShapes {
+
+   public static void main(String[] args) {
+      PPShow ppt = new PPShow();
+      PPSlide slide = new PPSlide();
+      slide.addTitle("Simple Shapes");
+      double x = (PPShow.WIDTH - SQUARE_SIZE) / 2;
+      double y = (PPShow.HEIGHT - SQUARE_SIZE) / 2;
+      PPRect square = new PPRect(x, y, SQUARE_SIZE, SQUARE_SIZE);
+      square.setColor(Color.RED);
+      PPOval circle = new PPOval(x, y, SQUARE_SIZE, SQUARE_SIZE);
+      circle.setColor(Color.GREEN);
+      slide.add(square);
+      slide.add(circle);
+      circle.addAnimation("Appear");
+      ppt.add(slide);
+      ppt.save("PPSimpleShapes.pptx");
+      System.out.println("PPSimpleShapes.pptx saved");
+   }
+
+   private static final double SQUARE_SIZE = 200;
+
+}
+</b></code></pre></td></tr></table>
+
+<p><a name="Figure2"></a>
+<font face="arial,helvetica,sans serif" size=-1><b>
+Figure 2. Checkerboard example</b></font>
+<table border=1 width=100% cellspacing=0 cellpadding=3>
+<tr><td><pre><code><b><font color=blue>/*
+ * File: PPCheckerboard.java
+ * -------------------------
+ * This program illustrates the operation of the edu.stanford.cs.pptx
+ * package by creating a checkerboard on the screen.
+ */</font>
+
+import edu.stanford.cs.pptx.PPRect;
+import edu.stanford.cs.pptx.PPShow;
+import edu.stanford.cs.pptx.PPSlide;
+import java.awt.Color;
+
+<font color=blue>/**
+ * This class creates a standard 8x8 checkerboard on the
+ * PowerPoint screen.  The checkerboard uses the square size
+ * shown in the constant definitions and centers the completed
+ * checkerboard on the screen.
+ */</font>
+
+public class PPCheckerboard {
+
+   public static void main(String[] args) {
+      PPShow ppt = new PPShow();
+      PPSlide slide = new PPSlide();
+      slide.addTitle("Checkerboard Example");
+      double cx = PPShow.WIDTH / 2;
+      double cy = PPShow.HEIGHT / 2;
+      double x0 = cx - SQUARE_SIZE * N_COLUMNS / 2;
+      double y0 = cy - SQUARE_SIZE * N_ROWS / 2;
+      for (int i = 0; i < N_ROWS; i++) {
+         for (int j = 0; j < N_COLUMNS; j++) {
+            double x = x0 + j * SQUARE_SIZE;
+            double y = y0 + i * SQUARE_SIZE;
+            PPRect sq = new PPRect(x, y, SQUARE_SIZE, SQUARE_SIZE);
+            Color color = ((i + j) % 2 == 0) ? Color.WHITE : Color.BLACK;
+            sq.setFillColor(color);
+            slide.add(sq);
+         }
+      }
+      ppt.add(slide);
+      ppt.save("PPCheckerboard.pptx");
+      System.out.println("PPCheckerboard.pptx saved");
+   }
+
+<font color=blue>/* Constants */</font>
+
+   private static final double SQUARE_SIZE = 40;
+   private static final int N_ROWS = 8;
+   private static final int N_COLUMNS = 8;
+
+}
+</b></code></pre></td></tr></table>
+
+<p>The code in <a href="#Figure3">Figure 3</a> creates a slightly more
+sophisticated slide that animates the process of stringing colored yarn
+around a set of pegs.  The process consists of the following steps:
+
+<p><ul>
+<li>Place a set of pegs at regular intervals around a rectangular border.
+<li>Tie a piece of colored yarn around the peg in the upper left corner.
+<li>Loop that yarn around the peg a certain distance <code>DELTA</code> ahead.
+<li>Continue moving forward <code>DELTA</code> pegs until you close the loop.
+</ul>
+
+<p><a name="Figure3"></a>
+<font face="arial,helvetica,sans serif" size=-1><b>
+Figure 3. Yarn pattern example</b></font>
+<table border=1 width=100% cellspacing=0 cellpadding=3>
+<tr><td><pre><code><b><font color=blue>/*
+ * File: PPYarnPattern.java
+ * ------------------------
+ * This file creates a PowerPoint slide that weaves a pattern of yarn
+ * around an array of pegs.
+ */</font>
+
+import edu.stanford.cs.pptx.PPLine;
+import edu.stanford.cs.pptx.PPRect;
+import edu.stanford.cs.pptx.PPShow;
+import edu.stanford.cs.pptx.PPSlide;
+import java.awt.Color;
+import java.awt.geom.Point2D;
+
+<font color=blue>/**
+ * This program creates a pattern that simulates the process of winding a
+ * piece of colored yarn around an array of pegs along the edges of the
+ * canvas.  On each cycle, the yarn is stretched from its current peg to
+ * the one DELTA pegs further on.
+ */</font>
+
+public class PPYarnPattern {
+
+   public static void main(String[] args) {
+      PPShow ppt = new PPShow();
+      PPSlide slide = new PPSlide();
+      slide.addTitle("Yarn Pattern");
+      double dy = 15;
+      double x = (PPShow.WIDTH - PEG_SEP * N_ACROSS) / 2;
+      double y = (PPShow.HEIGHT - PEG_SEP * N_DOWN) / 2 + dy;
+      double width = N_ACROSS * PEG_SEP;
+      double height = N_DOWN * PEG_SEP;
+      PPRect background = new PPRect(x, y, width, height);
+      background.setFillColor(Color.WHITE);
+      slide.add(background);
+      Point2D[] pegs = initPegArray(x, y);
+      int thisPeg = 0;
+      String trigger = "/onClick";
+      for (int i = 0; i == 0 || thisPeg != 0; i++) {
+         if (i == ON_CLICK_COUNT) {
+            trigger = "/afterPrev/delay:" + ANIMATION_DELAY;
+         }
+         int nextPeg = (thisPeg + DELTA) % pegs.length;
+         Point2D p0 = pegs[thisPeg];
+         Point2D p1 = pegs[nextPeg];
+         PPLine line = new PPLine(p0.getX(), p0.getY(),
+                            p1.getX(), p1.getY());
+         line.setColor(YARN_COLOR);
+         slide.add(line);
+         line.addAnimation("Appear" + trigger);
+         thisPeg = nextPeg;
+      }
+      ppt.add(slide);
+      ppt.save("PPYarnPattern.pptx");
+      System.out.println("PPYarnPattern.pptx saved");
+   }
+
+<font color=blue>/* Creates a peg array whose upper left corner is at (x, y) */</font>
+
+   private static Point2D[] initPegArray(double x, double y) {
+      Point2D[] pegs = new Point2D[2 * (N_ACROSS + N_DOWN)];
+      int cp = 0;
+      for (int i = 0; i < N_ACROSS; i++) {
+         pegs[cp++] = new Point2D.Double(x + i * PEG_SEP, y);
+      }
+      for (int i = 0; i < N_DOWN; i++) {
+         pegs[cp++] = new Point2D.Double(x + N_ACROSS * PEG_SEP,
+                                         y + i * PEG_SEP);
+      }
+      for (int i = N_ACROSS; i > 0; i--) {
+         pegs[cp++] = new Point2D.Double(x + i * PEG_SEP,
+                                         y + N_DOWN * PEG_SEP);
+      }
+      for (int i = N_DOWN; i > 0; i--) {
+         pegs[cp++] = new Point2D.Double(x, y + i * PEG_SEP);
+      }
+      return pegs;
+   }
+
+<font color=blue>/* Constants */</font>
+
+   private static final int N_ACROSS = 43;
+   private static final int N_DOWN = 31;
+   private static final int DELTA = 61;
+   private static final int ON_CLICK_COUNT = 4;
+   private static final double PEG_SEP = 12.67;
+   private static final double ANIMATION_DELAY = 0.050;
+   private static final Color YARN_COLOR = Color.MAGENTA;
+
+}
+</b></code></pre></td></tr></table>
+</body>
+</html>
