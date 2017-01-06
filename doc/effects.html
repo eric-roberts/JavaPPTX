@@ -1,0 +1,546 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN""http://www.w3.org/TR/html4/frameset.dtd">
+<html lang='en'
+<head>
+<title>PowerPoint Effects</title>
+</head>
+<body>
+The <code>edu.stanford.cs.pptx</code> package
+implements the following effects:<br/>
+<br/><code><b>Appear</b></code><br/>
+ This entrance effect causes the shape to appear in response
+ to the trigger event, which defaults to <code>/onClick</code>.
+ The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ </table>
+<br/><code><b>ChangeFillColor</b></code><br/>
+ This emphasis effect change the fill color of the shape gradually over
+ the duration of the effect.  The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/color:</code><i>color</i></td>
+     <td>Specifies the target color</td></tr>
+ </table>
+<br/><code><b>ChangeLineColor</b></code><br/>
+ This emphasis effect change the line color of the shape gradually over
+ the duration of the effect.  The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/color:</code><i>color</i></td>
+     <td>Specifies the target color</td></tr>
+ </table>
+<br/><code><b>CheckerboardIn</b></code><br/>
+ This entrance effect causes the shape to appear in a checkerboard pattern.
+ The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/across</code></td>
+     <td>The checkerboard moves from left to right</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/down</code></td>
+     <td>The checkerboard moves from top to bottom</td></tr>
+ </table>
+<br/><code><b>CheckerboardOut</b></code><br/>
+ This exit effect causes the shape to disappear in a checkerboard pattern.
+ The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/across</code></td>
+     <td>The checkerboard moves from left to right</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/down</code></td>
+     <td>The checkerboard moves from top to bottom</td></tr>
+ </table>
+<br/><code><b>Disappear</b></code><br/>
+ This exit effect causes the shape to disappear in response to the
+ trigger event, which defaults to <code>/onClick</code>.
+ The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ </table>
+<br/><code><b>FadeIn</b></code><br/>
+ This entrance effect causes the shape to appear gradually in the window.
+ The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ </table>
+<br/><code><b>FadeOut</b></code><br/>
+ This exit effect causes the shape to disappear gradually from the window.
+ The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ </table>
+<br/><code><b>FadedZoomIn</b></code><br/>
+ This entrance effect combines the fade and zoom animations.  The legal
+ options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ </table>
+<br/><code><b>FadedZoomOut</b></code><br/>
+ This exit effect combines the fade and zoom animations.  The legal
+ options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ </table>
+<br/><code><b>FlyIn</b></code><br/>
+ This entrance effect moves the object in from one of the compass points.
+ The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/acc</code></td>
+     <td>The effect accelerates at the beginning</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/dec</code></td>
+     <td>The effect decelerates at the end</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromTop</code>
+     <td>Shape flies in from the top</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromRight</code>
+     <td>Shape flies in from the right</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromTopRight</code>
+     <td>Shape flies in from the topright</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromBottom</code>
+     <td>Shape flies in from the bottom</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromBottomRight</code>
+     <td>Shape flies in from the bottomright</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromLeft</code>
+     <td>Shape flies in from the left</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromTopLeft</code>
+     <td>Shape flies in from the topleft</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromBottomLeft</code>
+     <td>Shape flies in from the bottomleft</td></tr>
+ </table>
+<br/><code><b>FlyOut</b></code><br/>
+ This entrance effect moves the object in from one of the compass points.
+ The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/acc</code></td>
+     <td>The effect accelerates at the beginning</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/dec</code></td>
+     <td>The effect decelerates at the end</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/toTop</code>
+     <td>Shape flies out to the top</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/toRight</code>
+     <td>Shape flies out to the right</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/toTopRight</code>
+     <td>Shape flies out to the topright</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/toBottom</code>
+     <td>Shape flies out to the bottom</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/toBottomRight</code>
+     <td>Shape flies out to the bottomright</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/toLeft</code>
+     <td>Shape flies out to the left</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/toTopLeft</code>
+     <td>Shape flies out to the topleft</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/toBottomLeft</code>
+     <td>Shape flies out to the bottomleft</td></tr>
+ </table>
+<br/><code><b>Grow</b></code><br/>
+ This emphasis effect scales the shape relative to its center.  The legal
+ options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/acc</code></td>
+     <td>The effect accelerates at the beginning</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/dec</code></td>
+     <td>The effect decelerates at the end</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/sf:</code><i>value</i>
+     <td>Specifies the scale factor in both dimensions</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/sx:</code><i>value</i>
+     <td>Specifies the scale factor in the <i>x</i> dimension only</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/sy:</code><i>value</i>
+     <td>Specifies the scale factor in the <i>y</i> dimension only</td></tr>
+ </table>
+<br/><code><b>Shrink</b></code><br/>
+ This emphasis effect scales the shape relative to its center.  The legal
+ options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/acc</code></td>
+     <td>The effect accelerates at the beginning</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/dec</code></td>
+     <td>The effect decelerates at the end</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/sf:</code><i>value</i>
+     <td>Specifies the scale factor in both dimensions</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/sx:</code><i>value</i>
+     <td>Specifies the scale factor in the <i>x</i> dimension only</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/sy:</code><i>value</i>
+     <td>Specifies the scale factor in the <i>y</i> dimension only</td></tr>
+ </table>
+<br/><code><b>Spin</b></code><br/>
+ This emphasis effect spins the shape around its center.  The legal
+ options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/acc</code></td>
+     <td>The effect accelerates at the beginning</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/dec</code></td>
+     <td>The effect decelerates at the end</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/angle:</code><i>degrees
+     <td>Specifies the number of degrees in the rotation</td></tr>
+ </table>
+<br/><code><b>WipeIn</b></code><br/>
+ This entrance effect causes the shape to appear gradually from one side.
+ The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromLeft</code></td>
+     <td>The shape appears from left to right</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromRight</code></td>
+     <td>The shape appears from right to left</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromTop</code></td>
+     <td>The shape appears from top to bottom</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromBottom</code></td>
+     <td>The shape appears from bottom to top</td></tr>
+ </table>
+<br/><code><b>WipeOut</b></code><br/>
+ This exit effect causes the shape to disappear gradually from one side.
+ The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromLeft</code></td>
+     <td>The shape disappears from left to right</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromRight</code></td>
+     <td>The shape disappears from right to left</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromTop</code></td>
+     <td>The shape disappears from top to bottom</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/fromBottom</code></td>
+     <td>The shape disappears from bottom to top</td></tr>
+ </table>
+<br/><code><b>ZoomIn</b></code><br/>
+ This entrance effect causes the shape to grow from a point into its
+ final position.  The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ </table>
+<br/><code><b>ZoomOut</b></code><br/>
+ This exit effect causes the shape to shrink from its current position
+ down to a point.  The legal options are:
+
+ <table border=0>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/onClick</code></td>
+     <td>Effect takes place after a mouse click</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/afterPrev</code></td>
+     <td>Effect takes place after the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/withPrev</code></td>
+     <td>Effect takes place with the previous one</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/delay:</code><i>time</i></td>
+     <td>Effect is delayed by <i>time</i> seconds</td></tr>
+ <tr><td style="padding-left:2em; width:10em;">
+     <code>/duration:</code><i>time</i></td>
+     <td>Effect lasts <i>time</i> seconds</td></tr>
+ </table>
+</body>
+</html>

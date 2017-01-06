@@ -1,0 +1,10 @@
+#! /bin/csh -f
+set arg = $1
+set dot = $arg:h
+set main = $arg:t
+if ("[$dot]" == "[$arg]") set dot = "."
+set JAR = $HOME/java/jar
+set CP = "${dot}:$JAR/pptx.jar:$JAR/cslib.jar"
+set SP = "${dot}:${dot}/src"
+javac -classpath $CP -sourcepath $SP $arg
+java -Djava.awt.headless=true -cp $CP $main:r
